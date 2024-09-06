@@ -30,7 +30,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         await query.edit_message_text(text=joke)
 
 def main():
-    # Вставьте свой токен
+    # Вставьте свой токен!!!
     application = Application.builder().token('6727976761:AAGRqR5Bq26UX0QnobDg25Xu8fXnPiTE2Is').build()
 
     # Обработчик команды /start
