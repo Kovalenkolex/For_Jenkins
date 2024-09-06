@@ -12,7 +12,7 @@ def get_joke():
     else:
         return "Не удалось получить анекдот, попробуйте позже."
 
-# Стартовая функция, которая отправляет приветственное сообщение и кнопку hjhj
+# Стартовая функция, которая отправляет приветственное сообщение и кнопку
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     keyboard = [
         [InlineKeyboardButton("Получить анекдот", callback_data='get_joke')]
