@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'myapp:latest' // Имя Docker-образа
+        DOCKER_IMAGE = 'latest' // Имя Docker-образа
         REPO_URL = 'https://github.com/Kovalenkolex/For_Jenkins.git' // URL твоего репозитория
         BRANCH_NAME = 'dev' // Ветка, с которой будем работать
     }
