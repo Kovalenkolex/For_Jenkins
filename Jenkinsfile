@@ -17,7 +17,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'docker build -t ${DOCKER_IMAGE} .'
+                    sh 'docker build -t justbot_image .'
                 }
             }
         }
@@ -28,7 +28,7 @@ pipeline {
                     sh '''
                     docker stop justbot || true
                     docker rm justbot || true
-                    docker run --restart unless-stopped -d --name justbot -p 80:80 ${DOCKER_IMAGE}
+                    docker run --restart unless-stopped -d --name justbot -p 80:80 justbot_image
                     '''
                 }
             }
