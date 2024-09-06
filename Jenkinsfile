@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'latest' // Имя Docker-образа
+        DOCKER_IMAGE = 'justbot_image' // Имя Docker-образа
         REPO_URL = 'https://github.com/Kovalenkolex/For_Jenkins.git' // URL твоего репозитория
         BRANCH_NAME = 'dev' // Ветка, с которой будем работать
     }
@@ -26,9 +26,9 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    docker stop myapp || true
-                    docker rm myapp || true
-                    docker run -d --name myapp -p 80:80 ${DOCKER_IMAGE}
+                    docker stop justbot || true
+                    docker rm justbot || true
+                    docker run --restart unless-stopped -d --name justbot -p 80:80 ${DOCKER_IMAGE}
                     '''
                 }
             }
