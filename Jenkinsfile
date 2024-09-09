@@ -11,7 +11,9 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git clone -b "${BRANCH_NAME}" "${REPO_URL}" "${PROJECT_DIR}"//git branch: "${BRANCH_NAME}", url: "${REPO_URL}"
+                dir("${PROJECT_DIR}") {
+                    git branch: "${BRANCH_NAME}", url: "${REPO_URL}"
+                }
             }
         }
 
