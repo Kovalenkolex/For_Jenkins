@@ -10,7 +10,8 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: "${BRANCH_NAME}", url: "${REPO_URL}"
+                //git branch: "${BRANCH_NAME}", url: "${REPO_URL}"
+                git clone -b "${BRANCH_NAME}" "${REPO_URL}" /home/ansible/justbot/
             }
         }
 
