@@ -5,13 +5,13 @@ pipeline {
         DOCKER_IMAGE = 'justbot_image' // Имя Docker-образа
         REPO_URL = 'https://github.com/Kovalenkolex/For_Jenkins.git' // URL твоего репозитория
         BRANCH_NAME = 'dev' // Ветка, с которой будем работать
+        PROJECT_DIR = '/home/ansible/justbot/'
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                //git branch: "${BRANCH_NAME}", url: "${REPO_URL}"
-                git clone -b "${BRANCH_NAME}" "${REPO_URL}" /home/ansible/justbot/
+                git clone -b "${BRANCH_NAME}" "${REPO_URL}" "${PROJECT_DIR}"//git branch: "${BRANCH_NAME}", url: "${REPO_URL}"
             }
         }
 
