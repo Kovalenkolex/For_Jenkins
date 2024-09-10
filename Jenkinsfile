@@ -12,7 +12,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 dir("${PROJECT_DIR}") {
-                    sudo git branch: "${BRANCH_NAME}", url: "${REPO_URL}"
+                    git branch: "${BRANCH_NAME}", url: "${REPO_URL}"
                 }
             }
         }

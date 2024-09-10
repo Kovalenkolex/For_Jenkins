@@ -2,7 +2,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 import requests
 
-# Функция для получения случайного анекдота   не знаю уже че там за права  вапжыдолрпа gdfgdr
+# Функция для получения случайного анекдота   не знаю уже че там за права  вапжыдолрпа
 def get_joke():
     url = "https://v2.jokeapi.dev/joke/Any?type=single"
     response = requests.get(url)
